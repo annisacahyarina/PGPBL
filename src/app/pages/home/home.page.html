@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color= "primary">
+    <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Reciclica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item color="primary">
+      <ion-avatar slot="start">
+        <img src="https://w7.pngwing.com/pngs/620/1022/png-transparent-person-in-necktie-and-jacket-art-computer-icons-avatar-business-agent-icon-service-people-logo-thumbnail.png">
+      </ion-avatar>
+      <ion-label>
+        <h1>Paulo Alves</h1>
+        <p>Gathered: <span class="money">$ 15,00</span></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <app-pickup-call-card status="hold" updatedAt="25/04/2021 16:59" createdAt="24/04/2021"
+  notes="we have two bags that are full, one with plastic and the other with glasses">
+
+  <ion-card-header header>
+    <ion-card-subtitle>Last pickup call</ion-card-subtitle>
+  </ion-card-header>
+  <ion-button color="success" fill="clear" size="full" footer (click)="goToPickupCalls()">See all...</ion-button>
+</app-pickup-call-card>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="success" (click)="newPickupCall()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
