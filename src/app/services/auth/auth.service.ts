@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import * as firebase from 'firebase/compat/app'
 import { User } from 'src/app/model/user/User';
+import { UserRegister } from 'src/app/model/user/UserRegister';
 
 
 
@@ -13,6 +14,19 @@ import { User } from 'src/app/model/user/User';
 export class AuthService {
 
   constructor(private auth: AngularFireAuth) { }
+
+  register(userRegister: UserRegister) : Observable<void> {
+    return new Observable<void>(observer => {
+      setTimeout(() => {
+        if (userRegister.email == "error@email.com") {
+          observer.error({message: "email already registered"});
+        } else {
+          observer.next();
+        }
+        observer.complete();
+      }, 3000)
+    })
+  }
 
   recoveryEmailPassword(email: string): Observable<void> {
     return new Observable<void>(observer => {

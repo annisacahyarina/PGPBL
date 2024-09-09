@@ -13,8 +13,8 @@
          <ion-input type="email" formControlName="email"></ion-input>
         </ion-item>
 
-        <app-error-message *ngIf="form.get('email')" [field]="form.get('email')!" error="required" message="Email is mandatory"></app-error-message>
-        <app-error-message *ngIf="form.get('email')" [field]="form.get('email')!" error="email" message="Email is invalid"></app-error-message>
+        <app-error-message [field]="form.get('email')!" error="required" message="Email is mandatory"></app-error-message>
+        <app-error-message [field]="form.get('email')!" error="email" message="Email is invalid"></app-error-message>
 
         <ion-label color="danger" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']">Email is invalid</ion-label>
 
